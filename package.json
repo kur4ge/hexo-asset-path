@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/r12f/hexo-asset-path/issues"
   },
-  "homepage": "https://github.com/r12f/hexo-asset-path#readme"
+  "homepage": "https://github.com/r12f/hexo-asset-path#readme",
+  "dependencies": {
+    "soup": "^0.1.5",
+    "underscore": "^1.8.3"
+  }
 }
