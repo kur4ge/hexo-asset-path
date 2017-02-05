@@ -1,6 +1,6 @@
 {
   "name": "hexo-asset-path",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A hexo plugin for making inserting assets to post and integrating with cdn easier.",
   "main": "index.js",
   "scripts": {
