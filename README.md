@@ -1,6 +1,6 @@
-# hexo-tag-asset-path
+# hexo-asset-path
 
-[![npm version](https://badge.fury.io/js/hexo-tag-asset-path.svg)](http://badge.fury.io/js/hexo-tag-asset-path)
+[![npm version](https://badge.fury.io/js/hexo-asset-path.svg)](http://badge.fury.io/js/hexo-asset-path)
 
 In hexo, the images inserted by markdown syntax are often not points to the right place, due to relative path. We can use absolute path to work around this issue. But inserting the post permalink or asset folder every time is very annoying. Also, sometimes we don't like to store that much data on github, we like to move all the images to another CDN. It could be really painful, if you need to update every posts you wrote!
 
@@ -9,7 +9,7 @@ This plugin is written to deal with all these issues. It is trying to make inser
 ## Installation
 
 ``` bash
-$ npm install hexo-tag-asset-path --save
+$ npm install hexo-asset-path --save
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ Variables you can use in the asset folder and cdn folder:
 The variables are supported by underscore template, so you can even execute arbitrary JavaScript code with <% %>. For example, <% print(post_created.format('YYYY-MM-DD') %> will give you 2017-01-01, if today is that day.
 
 ### Inserting assets
-Just use the markdown syntax to insert your images, with the relative path (to the post asset folder if enabled, otherwise to your asset folder specified in hexo-tag-asset-path configuration).
+Just use the markdown syntax to insert your images, with the relative path (to the post asset folder if enabled, otherwise to your asset folder specified in hexo-asset-path configuration).
 ```
 ![your image](path/to/image.png)
 ```
