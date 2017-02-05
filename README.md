@@ -51,10 +51,10 @@ Just use the markdown syntax to insert your images, with the relative path (to t
 ### Asset path in different modes
 As we know, we can enable post asset folder in hexo, and hexo can create a local server to preview your blog, and you might like to enable CDN when you generate the real site. The asset path for showing your assets properly in these different modes are actually different. And the following table shows how we generate the asset path:
 
-|                            | Local server             | Real site                                              |
-| -------------------------- | ------------------------ | ------------------------------------------------------ |
-| Post asset folder enabled  | /PostPermalink/AssetPath | (CDN enabled ? //CDNFolder : )/PostPermalink/AssetPath |
-| Post asset folder disabled | /AssetFolder/AssetPath   | (CDN enabled ? //CDNFolder : /AssetFolder)/AssetPath   |
+|                            | Local server                     | Real site                                                      |
+| -------------------------- | -------------------------------- | -------------------------------------------------------------- |
+| Post asset folder enabled  | /PostPermalinkPathName/AssetPath | (CDN enabled ? //CDNFolder : )/PostPermalinkPathName/AssetPath |
+| Post asset folder disabled | /AssetFolder/AssetPath           | (CDN enabled ? //CDNFolder : /AssetFolder)/AssetPath           |
 
 ### Debugging
 The posts and links we updated is outputted to the hexo log. Just simply enable debug mode and logging in hexo, then you can see it.

@@ -1,8 +1,10 @@
 'use strict';
 
 var path = require('path');
+var url = require('url');
 var soup = require('soup');
 var _ = require('underscore');
+
 var log = hexo.log || log.log;
 
 var postKeys = {
@@ -96,7 +98,8 @@ function fixAssetPath(options, postInfo, assetPath) {
 
     var usePermalink = options.isPostAssetFolderEnabled;
     if (usePermalink) {
-        fixedAssetPath = path.join(postInfo.permalink, assetPath);
+        var permalink = url.parse(postInfo.permalink);
+        fixedAssetPath = path.join(permalink.pathname, assetPath);
     }
 
     var useAssetFolder = ((options.isRunningInLocalServerMode && !options.isPostAssetFolderEnabled) || !options.enableCDN);
