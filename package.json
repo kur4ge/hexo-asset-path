@@ -1,6 +1,6 @@
 {
-  "name": "hexo-asset-path",
-  "version": "1.0.0",
+  "name": "@kur4ge/hexo-asset-path",
+  "version": "1.0.1",
   "description": "A hexo plugin for making inserting assets to post and integrating with cdn easier.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/r12f/hexo-asset-path.git"
+    "url": "https://github.com/kur4ge/hexo-asset-path.git"
   },
   "keywords": [
     "hexo",
@@ -19,14 +19,14 @@
     "image"
   ],
   "author": {
-    "name": "r12f",
-    "email": "r12f.code@gmail.com"
+    "name": "kur4ge",
+    "email": "kur4ge1337@gmail.com"
   },
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/r12f/hexo-asset-path/issues"
+    "url": "https://github.com/kur4ge/hexo-asset-path/issues"
   },
-  "homepage": "https://github.com/r12f/hexo-asset-path#readme",
+  "homepage": "https://github.com/kur4ge/hexo-asset-path#readme",
   "dependencies": {
     "soup": "^0.1.5",
     "underscore": "^1.8.3"

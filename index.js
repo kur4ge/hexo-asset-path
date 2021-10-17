@@ -25,6 +25,7 @@ hexo.extend.filter.register('after_post_render', function(postInfo) {
 
     var options = {
         enable: assetPathConfig.enable,
+        assetPrefix: assetPathConfig.asset_prefix || '',
         createAssetFolder: assetPathConfig.asset_folder ? _.template(assetPathConfig.asset_folder) : null,
         enableCDN: assetPathConfig.enable_cdn,
         createCDNFolder: assetPathConfig.enable_cdn ? _.template(assetPathConfig.cdn_folder) : null,
@@ -89,9 +90,9 @@ function fixAssetPath(options, postInfo, assetPath) {
 
     // Update the asset link based on if we enabled post asset folder and our running mode.
     // The things we need to do in each mode are listed below:
-    //                              LocalServer             RealSite
-    // PostAssetFolderEnabled       /Permalink/AssetPath    (//CDNFolder||)/Permalink/AssetPath
-    // PostAssetFolderDisabled      /AssetFolder/AssetPath  (//CDNFolder||/AssetFolder)/AssetPath
+    //                              LocalServer                         RealSite
+    // PostAssetFolderEnabled       /Permalink/AssetPrefix/AssetPath    (//CDNFolder||)/Permalink/AssetPrefix/AssetPath
+    // PostAssetFolderDisabled      /AssetFolder/AssetPrefix/AssetPath  (//CDNFolder||/AssetFolder)/AssetPrefix/AssetPath
     //
     // Note: The permalink of the post doesn't contain the index.html, so we can directly use it as a folder.
     var fixedAssetPath = assetPath;
@@ -99,7 +100,8 @@ function fixAssetPath(options, postInfo, assetPath) {
     var usePermalink = options.isPostAssetFolderEnabled;
     if (usePermalink) {
         var permalink = url.parse(postInfo.permalink);
-        fixedAssetPath = path.join(permalink.pathname, assetPath);
+        var assetPrefix = options.assetPrefix || '';
+        fixedAssetPath = path.join(permalink.pathname, assetPrefix, assetPath);
     }
 
     var useAssetFolder = ((options.isRunningInLocalServerMode && !options.isPostAssetFolderEnabled) || !options.enableCDN);
